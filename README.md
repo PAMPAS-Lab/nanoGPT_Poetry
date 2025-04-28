@@ -31,7 +31,7 @@ pip install torch numpy transformers datasets tiktoken wandb tqdm streamlit plot
 ```
 ├── data/                     # 数据目录
 │   └── shakespeare_char/     # 字符级别的古诗词数据
-│       ├── input.txt         # 古诗词原始文本
+│       ├── combined_poetry.txt # 古诗词原始文本
 │       ├── train.bin         # 训练数据
 │       ├── val.bin           # 验证数据
 │       ├── poetry_meta.pkl   # 词汇表元数据
@@ -59,6 +59,7 @@ pip install torch numpy transformers datasets tiktoken wandb tqdm streamlit plot
 # 将你的古诗词文本放入combined_poetry.txt文件
 python data/shakespeare_char/prepare.py
 ```
+运行后会生成训练train.bin和测试test.bin
 
 ### 训练模型
 
@@ -72,7 +73,7 @@ python train.py config/train_shakespeare_char.py --batch_size=32 --n_layer=8 --n
 
 ### 下载预训练模型
 
-您可以从以下百度云链接下载预训练的模型权重：
+你可以从以下百度云链接下载预训练的模型权重：
 
 ```
 链接：https://pan.baidu.com/s/11tCOCI_gmzi_MLDSR4NzTg?pwd=ai2a
@@ -197,7 +198,7 @@ pip install torch numpy transformers datasets tiktoken wandb tqdm streamlit plot
 ```
 ├── data/                     # Data directory
 │   └── shakespeare_char/     # Character-level poetry data
-│       ├── input.txt         # Original poetry text
+│       ├── combined_poetry.txt  # Original poetry text
 │       ├── train.bin         # Training data
 │       ├── val.bin           # Validation data
 │       ├── poetry_meta.pkl   # Vocabulary metadata
@@ -225,6 +226,7 @@ To use your own poetry dataset:
 # Place your poetry text in input.txt file
 python data/shakespeare_char/prepare.py
 ```
+And you will get train.bin and test.bin
 
 ### Training the Model
 
